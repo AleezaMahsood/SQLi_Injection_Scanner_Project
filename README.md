@@ -1,12 +1,6 @@
-Here’s a well-structured and detailed **README** file for your SQL Injection Scanner project. This will be perfect for GitHub or submission documentation:
-
----
-
 # 🔍 SQL Injection Vulnerability Scanner
 
 A Python-based tool that automatically detects **SQL injection vulnerabilities** by crawling websites, testing URL parameters and HTML forms using various SQL payloads, and generating detailed JSON and HTML reports.
-
----
 
 ## 🚀 Features
 
@@ -18,13 +12,11 @@ A Python-based tool that automatically detects **SQL injection vulnerabilities**
 * ✅ Generates structured **JSON log** and a styled **HTML report**
 * ✅ Multithreaded scanning for faster execution
 
----
 
 ## 🧠 Project Objective
 
 > To develop an automated tool that detects SQL injection vulnerabilities in web applications by scanning URLs and forms, injecting crafted payloads, and analyzing server responses for signs of vulnerabilities.
 
----
 
 ## 🛠️ Technologies Used
 
@@ -36,7 +28,6 @@ A Python-based tool that automatically detects **SQL injection vulnerabilities**
 * `json` – logging vulnerabilities
 * `HTML/CSS/JS` – styled report generation
 
----
 
 ## 🌐 Tested On
 
@@ -45,7 +36,6 @@ A Python-based tool that automatically detects **SQL injection vulnerabilities**
 
 > Both are intentionally vulnerable environments for safe security testing.
 
----
 
 ## 🔁 How It Works
 
@@ -58,7 +48,6 @@ A Python-based tool that automatically detects **SQL injection vulnerabilities**
    * `advanced_vuln_log.json` – structured log file
    * `report.html` – human-readable HTML report
 
----
 
 ## 💉 SQL Injection Payloads
 
@@ -70,7 +59,6 @@ The scanner uses a combination of:
 
 Each payload is tested across all URLs and forms found during crawling.
 
----
 
 ## 📂 Output
 
@@ -82,7 +70,7 @@ Each payload is tested across all URLs and forms found during crawling.
 
   > Raw data log of all vulnerabilities in JSON format for developers or automated tools.
 
----
+
 
 ## 📉 Severity Levels
 
