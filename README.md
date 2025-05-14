@@ -33,8 +33,9 @@ A Python-based tool that automatically detects **SQL injection vulnerabilities**
 
 1. `http://testasp.vulnweb.com/` – ASP-based vulnerable site
 2. `http://testphp.vulnweb.com/` – PHP-based vulnerable site
+3. `http://testfire.net/` – Vulnerable online banking site
 
-> Both are intentionally vulnerable environments for safe security testing.
+> All are intentionally vulnerable environments for safe security testing.
 
 
 ## 🔁 How It Works
